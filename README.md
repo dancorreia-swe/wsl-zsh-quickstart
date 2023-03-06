@@ -3,9 +3,6 @@
 
 Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plugins e funcionalidades visando a melhor experiência para desenvolvimento.
 
-
-
-
 ## Sumário
 
 - [Recomendações Iniciais](#recomendacoes-iniciais)
@@ -17,8 +14,6 @@ Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plug
 - [License](#license)
 - [FAQ](#faq)
 - [Troubleshooting](#troubleshooting)
-
-
 
 ## Recomendações Iniciais
 
@@ -87,3 +82,4 @@ wsl --set-default-version 2
 Faça o download do Kernel 2 do WSL 2 nesse link: [https://docs.microsoft.com/pt-br/windows/wsl/wsl2-kernel](https://docs.microsoft.com/pt-br/windows/wsl/wsl2-kernel) e instale o pacote.
 
 ## Escolha sua distro pela Microsoft Store
+![microsoft-store-print](./assets/linux-sc.png)
