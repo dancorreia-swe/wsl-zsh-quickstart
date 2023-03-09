@@ -216,6 +216,7 @@ Uma das grandes vantagens de se utilizar o WSL2 é a interatividade com o VSCode
 ### Pré-requisitos
 - Já ter instalado o [VSCode](https://code.visualstudio.com/download) na sua máquina
 - Instalar a extensão WSL no Visual Studio Code
+
 ![wsl-extension-pic](/assets/wsl.png)
 
 ## Utilização
