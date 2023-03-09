@@ -153,7 +153,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ## PowerLevel10k
-Antes de prosseguir com a instalação é ideal 
+Antes de prosseguir com a instalação é **ideal**:
+- Instalar uma fonte adequada.
+- Fazer todos os passos anteriores a este.
 
 ## 
 
