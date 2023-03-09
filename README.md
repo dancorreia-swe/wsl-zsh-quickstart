@@ -113,7 +113,7 @@ Para instalar o zshell utilize:
 ```bash
 sudo apt install zsh
 ```
-Para checar se o zsh foi devidamente instalado, reinicie seu terminal e digite, zsh --version, o comando deve retornar algo como: `zsh 5.8.1` 
+Para checar se o zsh foi devidamente instalado, reinicie seu terminal e digite, `zsh --version`, o comando deve retornar algo como: `zsh 5.8.1` 
 
 ## O que é Oh My Zsh?
 Oh My Zsh é um framework de código aberto para gerenciar sua configuração do Z Shell (zsh). Ele fornece uma maneira fácil de instalar e gerenciar temas, plugins e outras configurações do Z Shell. Com o Oh My Zsh, você pode personalizar facilmente a aparência e o comportamento do seu shell, adicionar novas funcionalidades e tornar sua experiência de linha de comando mais produtiva e agradável.
