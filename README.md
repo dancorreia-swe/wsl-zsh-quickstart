@@ -73,7 +73,8 @@ Abra o Terminal/PowerShell e execute este comando:
 wsl --set-default-version 2
 ```
 
-### Instalar o .exe do WSL
+***⚠️ Caso mostre que você não tenha o Kernel***<br>
+
 Faça o download do Kernel 2 do WSL 2 nesse link: [https://docs.microsoft.com/pt-br/windows/wsl/wsl2-kernel](https://docs.microsoft.com/pt-br/windows/wsl/wsl2-kernel) e instale o pacote.
 
 ## Escolha sua distro pela Microsoft Store
