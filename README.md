@@ -131,7 +131,7 @@ Vamos utilizar o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deix
 - Ter na `curl` ou `wget` instalados (Neste guia iremos utilizar curl).
 
 
-***Caso o Git não esteja instalado no seu WSL, utilize:***
+⚠️ ***Caso o Git não esteja instalado no seu WSL, utilize:***
 ```bash
 sudo apt update && sudo apt upgrade
 sudo apt install git
