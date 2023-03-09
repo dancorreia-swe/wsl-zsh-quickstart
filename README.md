@@ -19,7 +19,6 @@ Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plug
 
 - [Instale uma fonte adequada](#fontes)
 - [Cheque se sua máquina tem os requísitos minimos](#requisitos-minimos)
-- []
 ## O que é WSL?
 
 WSL significa "Windows Subsystem for Linux" e é uma camada de compatibilidade dentro do sistema operacional Windows que permite a execução de aplicativos Linux diretamente no Windows, sem a necessidade de uma máquina virtual separada. Isso permite que os usuários executem aplicativos e ferramentas Linux em seus sistemas Windows sem ter que instalar um sistema operacional Linux separado.
@@ -45,10 +44,6 @@ Existem várias razões pelas quais o WSL pode ser uma excelente escolha para de
 4. **Compatibilidade com o Windows** - O WSL permite que os desenvolvedores usem o Windows como plataforma de desenvolvimento sem sacrificar a compatibilidade com o Windows. Isso significa que os desenvolvedores podem escrever e testar código no Windows e ter certeza de que ele funcionará corretamente quando for implantado em um ambiente de produção do Windows.
 
 Em resumo, o WSL pode ser uma excelente escolha para desenvolvimento de software, permitindo que os desenvolvedores acessem ferramentas Linux, suportem ambientes de desenvolvimento populares do Linux, configurem facilmente seus ambientes de desenvolvimento e garantam a compatibilidade com o Windows.
-## Referências
-
-- [Guia rápido do WSL2 + Docker](https://github.com/codeedu/wsl2-docker-quickstart)
-- [WSL - Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=WSL%202%20requires%20Windows%2011,of%20native%20Ubuntu%2020.04%20LTS.)
 ## Instalação do WSL 2
 
 > ## Windows 11
@@ -82,4 +77,89 @@ wsl --set-default-version 2
 Faça o download do Kernel 2 do WSL 2 nesse link: [https://docs.microsoft.com/pt-br/windows/wsl/wsl2-kernel](https://docs.microsoft.com/pt-br/windows/wsl/wsl2-kernel) e instale o pacote.
 
 ## Escolha sua distro pela Microsoft Store
+Na Microsoft Store há diversas opções distribuições Linux para você baixar e utilizar.
+<br><br>
 ![microsoft-store-print](./assets/linux-sc.png)
+
+Ao iniciar o Linux instalado, você deverá criar um nome de usuário que poderá ser o mesmo da sua máquina e uma senha, este será o usuário root da sua instância WSL.
+
+<hr>
+Se tudo deu certo até aqui, parabéns, seu WSL2 já está funcionando! 🥳<br><br>
+
+## O que é Z shell?
+
+Z Shell, também conhecido como zsh, é um interpretador de comandos de shell para sistemas Unix-like, como Linux e macOS. Ele é uma alternativa mais poderosa e avançada ao shell padrão Bash.
+
+O Z Shell tem muitos recursos úteis, incluindo autocompletar, histórico de comandos aprimorado, substituição de nomes de arquivos com wildcards (expressões regulares), suporte a várias abas e janelas, personalização da aparência e do comportamento do shell e muito mais. Além disso, ele tem um sistema de plugin robusto que permite estender ainda mais suas funcionalidades.
+
+Outro recurso útil do Z Shell é o seu "prompt de diretorio", que mostra o diretório atual em que o usuário está trabalhando no shell, bem como outras informações relevantes. Isso pode ajudar a evitar erros ao executar comandos em diretórios errados e a tornar o trabalho no shell mais eficiente.
+
+O Z Shell pode ser instalado em muitas distribuições Linux e macOS por meio de gerenciadores de pacotes ou por meio de download direto do site oficial. Ele é frequentemente recomendado para usuários avançados de linha de comando que desejam uma experiência de shell mais poderosa e personalizável.
+
+### *Por que utilizar o ZSH vai melhorar a sua experiência utilizando o terminal?*
+- **Personalização**: o Z Shell é altamente personalizável e você pode ajustar muitas configurações para adaptar o shell às suas preferências. Isso pode incluir personalizar o prompt, criar aliases para comandos frequentemente usados, configurar atalhos de teclado personalizados e muito mais. Neste guia irei mostrar o **PowerLevel10k** um plugin versátil, extremamente útil que deixará está funcionalidade de customização super simples e que pode cobrir a maioria das suas necessidades.
+
+- **Compatibilidade com Bash**: o Z Shell é compatível com a maioria dos comandos do Bash, o que significa que você pode usar scripts e comandos existentes sem precisar reescrevê-los. Além disso, o Z Shell tem recursos adicionais que o Bash não possui, portanto, você pode aproveitar o melhor dos dois mundos.
+## Instalando ZSH 
+Para instalar o Z Shell abra o app Terminal do Windows para acessar o seu WSL <br><br>
+![windows-terminal-search](./assets/terminal-neo.gif)
+
+### Instalando ZSH
+No terminal, em ambiente Linux, atualize os seus pacotes e dê upgrade nos programas do seu sistema utilizando os comandos abaixo:
+```bash
+sudo apt update && sudo apt upgrade
+```
+**Ubuntu, Debian & derivatives (Windows 10 WSL | Native Linux kernel with Windows 10 build 1903)** <br>
+Para instalar o zshell utilize:
+```bash
+sudo apt install zsh
+```
+Para checar se o zsh foi devidamente instalado, reinicie seu terminal e digite, zsh --version, o comando deve retornar algo como: `zsh 5.8.1` 
+
+## O que é Oh My Zsh?
+Oh My Zsh é um framework de código aberto para gerenciar sua configuração do Z Shell (zsh). Ele fornece uma maneira fácil de instalar e gerenciar temas, plugins e outras configurações do Z Shell. Com o Oh My Zsh, você pode personalizar facilmente a aparência e o comportamento do seu shell, adicionar novas funcionalidades e tornar sua experiência de linha de comando mais produtiva e agradável.
+
+O Oh My Zsh vem com vários recursos úteis pré-instalados, como autocompletar, sugestões de comandos, substituição de nomes de arquivos com wildcards, temas de aparência atraente e muito mais. Além disso, existem centenas de plugins disponíveis para o Oh My Zsh, que podem ser facilmente adicionados e configurados para atender às suas necessidades.
+
+Vamos utilizar o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deixar nosso terminal charmoso e intuitivo, mostrando diretorios e status do Git diretamente nas linhas de escrita do prompt.
+
+## Oh My Zsh
+> ### Pre-requisitos:
+
+- Ter Git instalado (Por padrão o **WSL - Ubuntu** já vem com o Git instalado, mas caso queira se certificar digite `git --version` no seu terminal ). 
+
+- Ter na `curl` ou `wget` instalados (Neste guia iremos utilizar curl).
+
+
+*Caso o Git não esteja instalado no seu WSL, utilize:*
+```bash
+sudo apt update && sudo apt upgrade
+sudo apt install git
+```
+## CURL
+Vamos utilizar o cURL, uma ferramenta de linha de comando que permite realizar transferência de dados de e para servidores por meio de vários protocolos de rede, incluindo HTTP, HTTPS, FTP, SMTP, POP3 e muitos outros, para baixar e instalar o Oh My ZSH.
+<br><br>
+Para instalar o cURL basta somente fazer os mesmos passos feitos utilizados para a instalação do zsh:
+```bash
+sudo apt install curl
+```
+Para checar se foi devidamente instalado execute o comando: `curl --version`
+
+## Instalando OhMyZsh
+Para instalar Oh My Zsh basta digitar este comando no terminal e reinciar a janela do WSL.
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+## PowerLevel10k
+Antes de prosseguir com a instalação é ideal 
+
+## 
+
+## Referências
+
+- [Guia rápido do WSL2 + Docker](https://github.com/codeedu/wsl2-docker-quickstart)
+- [WSL - Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=WSL%202%20requires%20Windows%2011,of%20native%20Ubuntu%2020.04%20LTS.)
+- [Z shell](https://en.wikipedia.org/wiki/Z_shell)
+- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
