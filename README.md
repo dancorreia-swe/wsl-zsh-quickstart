@@ -126,7 +126,7 @@ Vamos utilizar o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deix
 ## Oh My Zsh
 > ### Pre-requisitos:
 
-- Ter Git instalado (Por padrão o **WSL - Ubuntu** já vem com o Git instalado, mas caso queira se certificar digite `git --version` no seu terminal ). 
+- Ter Git instalado (Por padrão o **WSL - Ubuntu** já vem com o Git instalado, mas caso queira se certificar digite `git --version` no seu terminal). 
 
 - Ter na `curl` ou `wget` instalados (Neste guia iremos utilizar curl).
 
