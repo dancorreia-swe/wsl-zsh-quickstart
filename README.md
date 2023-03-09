@@ -8,11 +8,11 @@ Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plug
 - [Recomendações Iniciais](#recomendacoes-iniciais)
 - [O que é WSL?](#features)
 - [Por que usar WSL 2 para desenvolvimento?](#installation)
-- [Configuration](#configuration)
-- [Fonts](#fonts)
-- [Try it in Docker](#try-it-in-docker)
-- [License](#license)
-- [FAQ](#faq)
+- [Instalação do WSL 2](#configuration)
+- [O que é Z Shell?](#fonts)
+- [Instalando ZSH](#try-it-in-docker)
+- [O que é Oh My Zsh?](#license)
+- [Oh My Zsh](#faq)
 - [Troubleshooting](#troubleshooting)
 
 ## Recomendações Iniciais
@@ -39,15 +39,13 @@ Existem várias razões pelas quais o WSL pode ser uma excelente escolha para de
 
 2. **Suporte para ambientes de desenvolvimento populares do Linux** - O WSL suporta ambientes de desenvolvimento populares do Linux, como o Ruby on Rails, o Node.js e o Python. Isso significa que os desenvolvedores podem continuar usando esses ambientes de desenvolvimento populares sem ter que mudar para o Linux.
 
-3. **Facilidade de configuração** - O WSL é fácil de configurar e usar, e os desenvolvedores podem instalar rapidamente suas ferramentas de desenvolvimento favoritas, sem ter que passar por todo o processo de configuração de um ambiente Linux completo.
-
-4. **Compatibilidade com o Windows** - O WSL permite que os desenvolvedores usem o Windows como plataforma de desenvolvimento sem sacrificar a compatibilidade com o Windows. Isso significa que os desenvolvedores podem escrever e testar código no Windows e ter certeza de que ele funcionará corretamente quando for implantado em um ambiente de produção do Windows.
+3. **Facilidade de configuração** - O WSL é fácil de configurar e usar, os desenvolvedores podem instalar rapidamente suas ferramentas de desenvolvimento favoritas, sem ter que passar por todo o processo de configuração de um ambiente Linux completo.
 
 Em resumo, o WSL pode ser uma excelente escolha para desenvolvimento de software, permitindo que os desenvolvedores acessem ferramentas Linux, suportem ambientes de desenvolvimento populares do Linux, configurem facilmente seus ambientes de desenvolvimento e garantam a compatibilidade com o Windows.
 ## Instalação do WSL 2
 
 > ## Windows 11
-Para instalar o WSL no Windows 11 ou Windows 10 na versão 2004 ou superior basta somente abrir um PowerShell ou um Prompt de comando e digitar
+Para instalar o WSL no Windows 11 ou Windows 10 na versão 2004 ou superior basta abrir um PowerShell ou um Prompt de comando e executar:
 ```bash
  wsl --install
 ```
@@ -55,7 +53,7 @@ Este comando irá instalar todas as dependências do WSL instalando o Ubuntu com
 
 Se você quiser instalar uma distribuição diferente, execute o comando `wsl -l -o` , será listado todas as versões de Linux disponíveis. Instale a versão escolhida com o comando `wsl --install -d nome-da-distribuicao`.
 
-Recomendamos manter-se com Ubuntu por ser uma distribuição popular e que já vem com diversas ferramentas pre-instaladas
+Recomendamos manter-se com Ubuntu por ser uma distribuição popular e que já vem com diversas ferramentas pre-instaladas.
 
 > ## Windows 10
 Caso você esteja em uma versão mais antiga do Windows 10, execute os seguintes comandos no PowerShell em modo administrador:
@@ -82,7 +80,7 @@ Na Microsoft Store há diversas opções distribuições Linux para você baixar
 <br><br>
 ![microsoft-store-print](./assets/linux-sc.png)
 
-Ao iniciar o Linux instalado, você deverá criar um nome de usuário que poderá ser o mesmo da sua máquina e uma senha, este será o usuário root da sua instância WSL.
+Ao iniciar o Linux instalado, você deverá criar um nome de usuário, que pode ser o mesmo da sua máquina, e uma senha, este será o usuário root da sua instância WSL.
 
 <hr>
 Se tudo deu certo até aqui, parabéns, seu WSL2 já está funcionando! 🥳<br><br>
@@ -105,7 +103,6 @@ O Z Shell pode ser instalado em muitas distribuições Linux e macOS por meio de
 Para instalar o Z Shell abra o app Terminal do Windows para acessar o seu WSL <br><br>
 ![windows-terminal-search](./assets/terminal-neo.gif)
 
-### Instalando ZSH
 No terminal, em ambiente Linux, atualize os seus pacotes e dê upgrade nos programas do seu sistema utilizando os comandos abaixo:
 ```bash
 sudo apt update && sudo apt upgrade
@@ -129,7 +126,7 @@ Vamos utilizar o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deix
 
 - Ter Git instalado (Por padrão o **WSL - Ubuntu** já vem com o Git instalado, mas caso queira se certificar digite `git --version` no seu terminal). 
 
-- Ter na `curl` ou `wget` instalados (Neste guia iremos utilizar curl).
+- Ter `curl` ou `wget` instalados (Neste guia iremos utilizar curl).
 
 
 ⚠️ ***Caso o Git não esteja instalado no seu WSL, utilize:***
@@ -138,9 +135,9 @@ sudo apt update && sudo apt upgrade
 sudo apt install git
 ```
 ## CURL
-Vamos utilizar o cURL, uma ferramenta de linha de comando que permite realizar transferência de dados de e para servidores por meio de vários protocolos de rede, incluindo HTTP, HTTPS, FTP, SMTP, POP3 e muitos outros, para baixar e instalar o Oh My ZSH.
+Vamos utilizar o curl, uma ferramenta de linha de comando que permite realizar transferência de dados de e para servidores por meio de vários protocolos de rede, incluindo HTTP, HTTPS, FTP, SMTP, POP3 e muitos outros, para baixar e instalar o Oh My ZSH.
 <br><br>
-Para instalar o cURL basta somente fazer os mesmos passos feitos utilizados para a instalação do zsh:
+Para instalar o curl basta somente fazer os mesmos passos feitos utilizados para a instalação do zsh:
 ```bash
 sudo apt install curl
 ```
@@ -157,8 +154,46 @@ Antes de prosseguir com a instalação é **ideal**:
 - Instalar uma fonte adequada.
 - Fazer todos os passos anteriores a este.
 
-## 
+### O que o PowerLevel10k faz?
+É um tema para o ZSH, que enfatiza velocidade, flexibilidade e uma experiência fora da caixa, voltada principalmente para a customização do seu terminal.
 
+## Instalando o PowerLevel10k
+A maneira mais simples de instalar é utilizando o git, desta forma bastar executar o código no terminal e reiniciar a janela para entrar no modo de configuração.
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+```
+## Wizard e Customização
+Após reiniciar a janela um wizard deve aparecer no seu terminal para selecionar opções de customização estéticas, a partir daqui vai a seu bom gosto e customização, caso queira repetir o processo de setup utilize:
+```bash
+p10k configure
+```
+
+![terminal-show-config](/assets/terminal10k.gif)
+
+## Plugins & Adicionais
+Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, podemos colocar a valer as ferramentas a nossa disposição. Aqui vou somente mostrar comn instalar dois plugins que são em minha opnião indispensáveis, mas vale falar que as opções de customização são praticamente ilimitadas e que você pode adicionar quantos plugins desejar.
+<br><br>
+> ### zsh-syntax-highlighting & zsh-autosuggestions
+<br>
+
+Execute os dois comandos abaixo para instalar o zsh-autosuggestions e o zsh-syntax-highlighting, respectivamente.
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+```
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+
+Depois de instalados, vá para `nano ~/.zshrc` e ache `plugins=(git)` e adicione os plugins desta forma: 
+
+```bash
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
+- Reabra o terminal e pronto. 🥳
+
+## Visual Studio Code
 ## Referências
 
 - [Guia rápido do WSL2 + Docker](https://github.com/codeedu/wsl2-docker-quickstart)
@@ -166,3 +201,4 @@ Antes de prosseguir com a instalação é **ideal**:
 - [Z shell](https://en.wikipedia.org/wiki/Z_shell)
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [Gist - Plugins zsh](https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95)
