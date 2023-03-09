@@ -35,7 +35,7 @@ Para entender as diferenças entre as versões, consulte o seguinte link: https:
 
 Existem várias razões pelas quais o WSL pode ser uma excelente escolha para desenvolvimento de software:
 
-1. **Acesso a ferramentas Linux** - O WSL permite que os desenvolvedores acessem e usem as ferramentas de linha de comando do Linux, muitas das quais são amplamente utilizadas na comunidade de desenvolvimento de software, como o Git, o Vim, o GCC, entre outras. Isso pode ser útil para desenvolvedores que estão acostumados a trabalhar em ambientes Linux e querem continuar usando essas ferramentas no Windows.
+1. **Acesso a ferramentas Linux** - O WSL permite que os desenvolvedores acessem e usem as ferramentas de linha de comando do Linux, muitas das quais são amplamente utilizadas na comunidade de desenvolvimento de software, como o Git, Vim, GCC, entre outras. Isso pode ser útil para desenvolvedores que estão acostumados a trabalhar em ambientes Linux e querem continuar usando essas ferramentas no Windows.
 
 2. **Suporte para ambientes de desenvolvimento populares do Linux** - O WSL suporta ambientes de desenvolvimento populares do Linux, como o Ruby on Rails, o Node.js e o Python. Isso significa que os desenvolvedores podem continuar usando esses ambientes de desenvolvimento populares sem ter que mudar para o Linux.
 
@@ -131,7 +131,7 @@ Vamos utilizar o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deix
 - Ter na `curl` ou `wget` instalados (Neste guia iremos utilizar curl).
 
 
-*Caso o Git não esteja instalado no seu WSL, utilize:*
+***Caso o Git não esteja instalado no seu WSL, utilize:***
 ```bash
 sudo apt update && sudo apt upgrade
 sudo apt install git
