@@ -154,7 +154,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ## PowerLevel10k
 Antes de prosseguir com a instalação é **ideal**:
-- Instalar uma fonte adequada.
+- Instalar uma [fonte adequada](#fonte-ideal).
 - Fazer todos os passos anteriores a este.
 
 ### O que o PowerLevel10k faz?
@@ -175,7 +175,7 @@ p10k configure
 ![terminal-show-config](/assets/terminal10k.gif)
 
 ## ZSH Plugins
-Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, podemos colocar a valer as ferramentas a nossa disposição. Aqui vou somente mostrar como instalar dois plugins que são em minha opnião indispensáveis, mas vale falar que as opções de customização são praticamente ilimitadas e que você pode adicionar quantos plugins desejar.
+Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, podemos colocar a valer as ferramentas a nossa disposição. Aqui vou somente mostrar como instalar dois plugins que são em minha opnião indispensáveis, mas vale ressaltar que as opções de customização são praticamente ilimitadas e que você pode adicionar quantos plugins desejar.
 <br><br>
 > ### zsh-syntax-highlighting & zsh-autosuggestions
 <br>
@@ -228,10 +228,12 @@ O Ubuntu irá abrir o diretório/arquivo no VSCode em ambiente Linux. Caso tudo 
 ![wsl-working](/assets/wsl-terminal.png) 
 
 ## Fonte ideal
-Para usar de todas as funcionalidades da melhor maneira é necessário instalar uma fonte que possua ligaduras e ícones. Neste caso, as melhores fontes a serem utilizadas são as [Nerd Fonts](https://www.nerdfonts.com/font-downloads), para usar elas entre no site deles, escolhe uma fonte e instale em sua máquina.
+Para usar de todas as funcionalidades da melhor maneira é necessário instalar uma fonte que possua ligaduras e ícones. Neste caso, as melhores fontes a serem utilizadas são as [Nerd Fonts](https://www.nerdfonts.com/font-downloads), para usar elas entre no site deles, escolha uma fonte e instale em sua máquina.
 
 ## Configurando fontes no Terminal Windows
 A configuração dentro do terminal Windows é feita a partir dos perfis, desta forma, abra a configurações pressionando `Ctrl + ,` ou clicando na setinha ao lado da aba para selecionar a opção. No perfil `Ubuntu` procure no menu a opção de `Aparência`, dentro dele, procure pela opção de fontes e altere para a que você baixou.
+
+![dropdown-terminal-menu](/assets/dropdown-menu-terminal.png)
 
 ## Configurando fonte no VSCode
 Se seu terminal e WSL estão funcionando mas você não está conseguindo visualizar os ícones dentro do terminal integrado do VSCode, basta somente uma simples configuração nas configurações de usuário para solucionar isso.
