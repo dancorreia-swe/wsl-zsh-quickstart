@@ -1,4 +1,3 @@
-
 # Guia para instalação WSL, Oh my ZSH + PowerLevel10k
 
 Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plugins e funcionalidades visando a melhor experiência para desenvolvimento.
@@ -113,7 +112,7 @@ Para instalar o zshell utilize:
 ```bash
 sudo apt install zsh
 ```
-Para checar se o zsh foi devidamente instalado, reinicie seu terminal e digite, `zsh --version`, o comando deve retornar algo como: `zsh 5.8.1` 
+Para checar se o zsh foi devidamente instalado, reinicie seu terminal e digite, `zsh --version` , o comando deve retornar algo similar à: `zsh 5.8.1` 
 
 ## O que é Oh My Zsh?
 Oh My Zsh é um framework de código aberto para gerenciar sua configuração do Z Shell (zsh). Ele fornece uma maneira fácil de instalar e gerenciar temas, plugins e outras configurações do Z Shell. Com o Oh My Zsh, você pode personalizar facilmente a aparência e o comportamento do seu shell, adicionar novas funcionalidades e tornar sua experiência de linha de comando mais produtiva e agradável.
@@ -165,7 +164,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 ```
 ## Wizard e Customização
-Após reiniciar a janela um wizard deve aparecer no seu terminal para selecionar opções de customização estéticas, a partir daqui vai a seu bom gosto e customização, caso queira repetir o processo de setup utilize:
+Após reiniciar a janela, um wizard deve aparecer no seu terminal para selecionar opções de customização estéticas, a partir daqui vai de seu bom gosto e preferência, caso queira repetir o processo de setup utilize:
 ```bash
 p10k configure
 ```
@@ -209,6 +208,49 @@ Já que você está dentro de um ambiente Linux, recomendamos que você instale 
 10. **zoxide**   
 
 ## Visual Studio Code
+Uma das grandes vantagens de se utilizar o WSL2 é a interatividade com o VSCode, desta forma, é possível usar a IDE para manipular os arquivos dentro do Linux, além de usar o terminal para gerenciar pacotes e ver status do git dos seus projetos em tempo real de desenvolvimento.
+
+### Pre-requisitos
+- Já ter instalado o [VSCode](https://code.visualstudio.com/download) na sua máquina
+- Instalar a extensão WSL no Visual Studio Code
+![wsl-extension-pic](/assets/wsl.png)
+
+## Utilização
+Após ter instalado o VSCode e a extensão WSL, dentro do terminal basta executar:
+```bash
+code nome-do-arquivo
+```
+O Ubuntu irá abrir o diretório/arquivo no VSCode em ambiente Linux. Caso tudo corra de maneira correta, no canto inferior esquerdo você verá uma tag em azul com o nome similar à: `WSL: Ubuntu` e o seu terminal integrado no VSCode funcional em Linux.
+
+![wsl-working](/assets/wsl-terminal.png) 
+
+## Fonte ideal
+Para usar de todas as funcionalidades da melhor maneira é necessário instalar uma fonte que possua ligaduras e ícones. Neste caso as melhores fontes a serem utilizadas são as [Nerd Fonts](https://www.nerdfonts.com/font-downloads), no site deles, basta escolher uma fonte e instalar em sua máquina.
+
+## Configurando fontes no Terminal Windows
+A configuração dentro do terminal Windows é feita a partir dos perfis, desta forma, abra a configurações pressionando `Ctrl + ,` ou clicando nas setinha ao lado da aba para selecionar a opção. No perfil `Ubuntu` procure no menu a opção de `Aparência`, dentro dele, procure pela opção de fontes e altere para a que você baixou.
+
+## Configurando fonte no VSCode
+Se seu terminal e WSL estão funcionando mas você não está conseguindo visualizar os ícones, basta somente uma simples configuração nas configurações de usuário para solucionar isso. Dentro do VSCode, abra a palheta de comando, `ctrl + shift + p` , e procure por `Preferences: Open User Settings (JSON)` ou `Preferências: Abrir as Configurações do Usuário (JSON)` caso use o VSCode em português.
+
+Nas linhas do editor você verá uma estrutura de `JSON`, basta adicionar uma nova linha e digitar:
+
+```bash
+  "editor.fontFamily": "nome-da-fonte",
+```
+⚠️ **Lembre-se de digitar o exato nome da fonte para que funcione corretamente**
+- Para checar as fontes instaladas no seu computador basta pesquisar na barra de pesquisa do Windows o termo `Fontes` ou abrir o Painel de Controle e selecionar o icone `Fontes`. 
+
+## Requisitos Minímos
+Para executar o WSL2 (Windows Subsystem for Linux 2) em um sistema operacional Windows 10, você precisa cumprir os seguintes requisitos mínimos de sistema:
+
+- Windows 10, versão 1903 ou superior - Certifique-se de que seu sistema operacional Windows 10 esteja atualizado para a versão 1903 ou superior. Para verificar a versão do seu Windows, pressione a tecla Windows + R, digite "winver" e pressione Enter.
+
+- Processador de 64 bits com suporte para virtualização - O WSL2 requer um processador de 64 bits com suporte para virtualização de hardware. Verifique se a virtualização está habilitada no BIOS do seu computador.
+
+- Pelo menos 4 GB de RAM - É recomendável ter pelo menos 4 GB de RAM para executar o WSL2.
+
+- 5 GB de espaço livre em disco - O WSL2 requer pelo menos 5 GB de espaço livre em disco para ser instalado.
 ## Referências
 
 - [Guia rápido do WSL2 + Docker](https://github.com/codeedu/wsl2-docker-quickstart)
@@ -217,3 +259,5 @@ Já que você está dentro de um ambiente Linux, recomendamos que você instale 
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - [Gist - Plugins zsh](https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
