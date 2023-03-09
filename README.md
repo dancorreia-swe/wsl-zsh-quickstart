@@ -5,15 +5,16 @@ Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plug
 
 ## Sumário
 
-- [Recomendações Iniciais](#recomendacoes-iniciais)
-- [O que é WSL?](#features)
-- [Por que usar WSL 2 para desenvolvimento?](#installation)
-- [Instalação do WSL 2](#configuration)
-- [O que é Z Shell?](#fonts)
-- [Instalando ZSH](#try-it-in-docker)
-- [O que é Oh My Zsh?](#license)
-- [Oh My Zsh](#faq)
-- [Troubleshooting](#troubleshooting)
+- [Recomendações Iniciais](#recomendações-iniciais)
+- [O que é WSL?](#o-que-é-wsl)
+- [Por que usar WSL 2 para desenvolvimento?](#por-que-usar-wsl-2-para-desenvolvimento)
+- [Instalação do WSL 2](#instalação-do-wsl-2)
+- [O que é Z Shell?](#o-que-é-z-shell)
+- [Instalando ZSH](#instalando-zsh)
+- [O que é Oh My Zsh?](#o-que-é-oh-my-zsh)
+- [Instalando Oh My Zsh](#instalando-ohmyzsh)
+- [PowerLevel10k](#powerlevel10k)
+- [Plugins e Adicionais](#plugins--adicionais)
 
 ## Recomendações Iniciais
 
