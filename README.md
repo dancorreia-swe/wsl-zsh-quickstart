@@ -1,7 +1,7 @@
 # Guia para instalação WSL, Oh my ZSH + PowerLevel10k
 
 Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plugins e funcionalidades visando a melhor experiência para desenvolvimento.
-
+![banner-stack-linux](/assets/wslstack-whitestroke.png)
 ## Sumário
 
 - [Recomendações Iniciais](#recomendações-iniciais)
@@ -14,14 +14,17 @@ Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plug
 - [Instalando Oh My Zsh](#instalando-ohmyzsh)
 - [PowerLevel10k](#powerlevel10k)
 - [ZSH Plugins](#zsh-plugins)
+- [Adicionais](#adicionais)
+- [Visual Studio Code](#visual-studio-code)
+- [Configurando fontes no Terminal/VSCode](#configurando-fontes-no-terminal-windows)
 
 ## Recomendações Iniciais
 
-- [Instale uma fonte adequada](#fontes)
-- [Cheque se sua máquina tem os requísitos minimos](#requisitos-minimos)
+- [Instale uma fonte adequada](#fonte-ideal)
+- [Cheque se sua máquina tem os requísitos minimos](#requisitos-mínimos)
 ## O que é WSL?
 
-WSL significa "Windows Subsystem for Linux" e é uma camada de compatibilidade dentro do sistema operacional Windows que permite a execução de aplicativos Linux diretamente no Windows, sem a necessidade de uma máquina virtual separada. Isso permite que os usuários executem aplicativos e ferramentas Linux em seus sistemas Windows sem ter que instalar um sistema operacional Linux separado.
+WSL significa "Windows Subsystem for Linux" é uma camada de compatibilidade dentro do sistema operacional Windows que permite a execução de aplicativos Linux diretamente no Windows, sem a necessidade de uma máquina virtual separada. Isso permite que os usuários executem aplicativos e ferramentas Linux em seus sistemas Windows sem ter que instalar um sistema operacional Linux separado.
 
 No ano de 2019, a Microsoft divulgou uma nova edição do WSL, conhecida como WSL 2. Essa nova versão apresentou melhorias em relação à primeira:
 
@@ -41,7 +44,7 @@ Existem várias razões pelas quais o WSL pode ser uma excelente escolha para de
 
 3. **Facilidade de configuração** - O WSL é fácil de configurar e usar, os desenvolvedores podem instalar rapidamente suas ferramentas de desenvolvimento favoritas, sem ter que passar por todo o processo de configuração de um ambiente Linux completo.
 
-Em resumo, o WSL pode ser uma excelente escolha para desenvolvimento de software, permitindo que os desenvolvedores acessem ferramentas Linux, suportem ambientes de desenvolvimento populares do Linux, configurem facilmente seus ambientes de desenvolvimento e garantam a compatibilidade com o Windows.
+Em resumo, o WSL pode ser uma excelente escolha para desenvolvimento de software, permitindo que os desenvolvedores acessem ferramentas, suportem e configurem ambientes de desenvolvimento populares do Linux, e garantam a compatibilidade com o Windows.
 ## Instalação do WSL 2
 
 > ## Windows 11
@@ -53,7 +56,7 @@ Este comando irá instalar todas as dependências do WSL instalando o Ubuntu com
 
 Se você quiser instalar uma distribuição diferente, execute o comando `wsl -l -o` , será listado todas as versões de Linux disponíveis. Instale a versão escolhida com o comando `wsl --install -d nome-da-distribuicao`.
 
-Recomendamos manter-se com Ubuntu por ser uma distribuição popular e que já vem com diversas ferramentas pre-instaladas.
+Recomendamos manter-se com Ubuntu por ser uma distribuição popular e que já vem com diversas ferramentas pré-instaladas.
 
 > ## Windows 10
 Caso você esteja em uma versão mais antiga do Windows 10, execute os seguintes comandos no PowerShell em modo administrador:
@@ -91,12 +94,12 @@ Z Shell, também conhecido como zsh, é um interpretador de comandos de shell pa
 
 O Z Shell tem muitos recursos úteis, incluindo autocompletar, histórico de comandos aprimorado, substituição de nomes de arquivos com wildcards (expressões regulares), suporte a várias abas e janelas, personalização da aparência e do comportamento do shell e muito mais. Além disso, ele tem um sistema de plugin robusto que permite estender ainda mais suas funcionalidades.
 
-Outro recurso útil do Z Shell é o seu "prompt de diretorio", que mostra o diretório atual em que o usuário está trabalhando no shell, bem como outras informações relevantes. Isso pode ajudar a evitar erros ao executar comandos em diretórios errados e a tornar o trabalho no shell mais eficiente.
+Outro recurso útil do Z Shell é o seu "prompt de diretório", que mostra o diretório atual em que o usuário está trabalhando no shell, bem como outras informações relevantes. Isso pode ajudar a evitar erros ao executar comandos em diretórios errados e a tornar o trabalho no shell mais eficiente.
 
 O Z Shell pode ser instalado em muitas distribuições Linux e macOS por meio de gerenciadores de pacotes ou por meio de download direto do site oficial. Ele é frequentemente recomendado para usuários avançados de linha de comando que desejam uma experiência de shell mais poderosa e personalizável.
 
 ### *Por que utilizar o ZSH vai melhorar a sua experiência utilizando o terminal?*
-- **Personalização**: o Z Shell é altamente personalizável e você pode ajustar muitas configurações para adaptar o shell às suas preferências. Isso pode incluir personalizar o prompt, criar aliases para comandos frequentemente usados, configurar atalhos de teclado personalizados e muito mais. Neste guia irei mostrar o **PowerLevel10k** um plugin versátil, extremamente útil que deixará está funcionalidade de customização super simples e que pode cobrir a maioria das suas necessidades.
+- **Personalização**: o Z Shell é altamente personalizável e você pode ajustar muitas configurações para adaptar o shell às suas preferências. Isso pode incluir personalizar o prompt, criar aliases para comandos frequentemente usados, configurar atalhos de teclado personalizados e muito mais. Neste guia irei mostrar o **PowerLevel10k** um plugin versátil, extremamente útil que deixará está funcionalidade de customização visual super simples de ser feita e que possivelmente irá cobrir a maioria das suas necessidades.
 
 - **Compatibilidade com Bash**: o Z Shell é compatível com a maioria dos comandos do Bash, o que significa que você pode usar scripts e comandos existentes sem precisar reescrevê-los. Além disso, o Z Shell tem recursos adicionais que o Bash não possui, portanto, você pode aproveitar o melhor dos dois mundos.
 ## Instalando ZSH 
@@ -119,10 +122,10 @@ Oh My Zsh é um framework de código aberto para gerenciar sua configuração do
 
 O Oh My Zsh vem com vários recursos úteis pré-instalados, como autocompletar, sugestões de comandos, substituição de nomes de arquivos com wildcards, temas de aparência atraente e muito mais. Além disso, existem centenas de plugins disponíveis para o Oh My Zsh, que podem ser facilmente adicionados e configurados para atender às suas necessidades.
 
-Vamos utilizar o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deixar nosso terminal charmoso e intuitivo, mostrando diretorios e status do Git diretamente nas linhas de escrita do prompt.
+Vamos utilizar o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deixar nosso terminal charmoso e intuitivo, mostrando diretorios e status do Git utilizando ícones e horários diretamente nas linhas de escrita do prompt.
 
 ## Oh My Zsh
-> ### Pre-requisitos:
+> ### Pré-requisitos:
 
 - Ter Git instalado (Por padrão o **WSL - Ubuntu** já vem com o Git instalado, mas caso queira se certificar digite `git --version` no seu terminal). 
 
@@ -172,7 +175,7 @@ p10k configure
 ![terminal-show-config](/assets/terminal10k.gif)
 
 ## ZSH Plugins
-Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, podemos colocar a valer as ferramentas a nossa disposição. Aqui vou somente mostrar comn instalar dois plugins que são em minha opnião indispensáveis, mas vale falar que as opções de customização são praticamente ilimitadas e que você pode adicionar quantos plugins desejar.
+Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, podemos colocar a valer as ferramentas a nossa disposição. Aqui vou somente mostrar como instalar dois plugins que são em minha opnião indispensáveis, mas vale falar que as opções de customização são praticamente ilimitadas e que você pode adicionar quantos plugins desejar.
 <br><br>
 > ### zsh-syntax-highlighting & zsh-autosuggestions
 <br>
@@ -200,7 +203,7 @@ Já que você está dentro de um ambiente Linux, recomendamos que você instale 
 2. **tree**
 3. **nvm**
 4. **npm**   
-5. **npx**   
+5. **vim**   
 6. **nnn**
 7. **pip**
 8. **bat**
@@ -208,9 +211,9 @@ Já que você está dentro de um ambiente Linux, recomendamos que você instale 
 10. **zoxide**   
 
 ## Visual Studio Code
-Uma das grandes vantagens de se utilizar o WSL2 é a interatividade com o VSCode, desta forma, é possível usar a IDE para manipular os arquivos dentro do Linux, além de usar o terminal para gerenciar pacotes e ver status do git dos seus projetos em tempo real de desenvolvimento.
+Uma das grandes vantagens de se utilizar o WSL2 é a interatividade com o VSCode, desta forma, é possível usar a IDE para manipular os arquivos e diretórios dentro do Linux, além de usar o terminal para gerenciar pacotes e ver status do git dos seus projetos em tempo real de desenvolvimento.
 
-### Pre-requisitos
+### Pré-requisitos
 - Já ter instalado o [VSCode](https://code.visualstudio.com/download) na sua máquina
 - Instalar a extensão WSL no Visual Studio Code
 ![wsl-extension-pic](/assets/wsl.png)
@@ -225,23 +228,26 @@ O Ubuntu irá abrir o diretório/arquivo no VSCode em ambiente Linux. Caso tudo 
 ![wsl-working](/assets/wsl-terminal.png) 
 
 ## Fonte ideal
-Para usar de todas as funcionalidades da melhor maneira é necessário instalar uma fonte que possua ligaduras e ícones. Neste caso as melhores fontes a serem utilizadas são as [Nerd Fonts](https://www.nerdfonts.com/font-downloads), no site deles, basta escolher uma fonte e instalar em sua máquina.
+Para usar de todas as funcionalidades da melhor maneira é necessário instalar uma fonte que possua ligaduras e ícones. Neste caso, as melhores fontes a serem utilizadas são as [Nerd Fonts](https://www.nerdfonts.com/font-downloads), para usar elas entre no site deles, escolhe uma fonte e instale em sua máquina.
 
 ## Configurando fontes no Terminal Windows
-A configuração dentro do terminal Windows é feita a partir dos perfis, desta forma, abra a configurações pressionando `Ctrl + ,` ou clicando nas setinha ao lado da aba para selecionar a opção. No perfil `Ubuntu` procure no menu a opção de `Aparência`, dentro dele, procure pela opção de fontes e altere para a que você baixou.
+A configuração dentro do terminal Windows é feita a partir dos perfis, desta forma, abra a configurações pressionando `Ctrl + ,` ou clicando na setinha ao lado da aba para selecionar a opção. No perfil `Ubuntu` procure no menu a opção de `Aparência`, dentro dele, procure pela opção de fontes e altere para a que você baixou.
 
 ## Configurando fonte no VSCode
-Se seu terminal e WSL estão funcionando mas você não está conseguindo visualizar os ícones, basta somente uma simples configuração nas configurações de usuário para solucionar isso. Dentro do VSCode, abra a palheta de comando, `ctrl + shift + p` , e procure por `Preferences: Open User Settings (JSON)` ou `Preferências: Abrir as Configurações do Usuário (JSON)` caso use o VSCode em português.
+Se seu terminal e WSL estão funcionando mas você não está conseguindo visualizar os ícones dentro do terminal integrado do VSCode, basta somente uma simples configuração nas configurações de usuário para solucionar isso.
+
+Dentro do VSCode, abra a palheta de comando, `ctrl + shift + p` , e procure por `Preferences: Open User Settings (JSON)` ou `Preferências: Abrir as Configurações do Usuário (JSON)` caso use o VSCode em português.
 
 Nas linhas do editor você verá uma estrutura de `JSON`, basta adicionar uma nova linha e digitar:
 
 ```bash
-  "editor.fontFamily": "nome-da-fonte",
+  "terminal.integrated.fontFamily": "nome-da-fonte",
 ```
 ⚠️ **Lembre-se de digitar o exato nome da fonte para que funcione corretamente**
 - Para checar as fontes instaladas no seu computador basta pesquisar na barra de pesquisa do Windows o termo `Fontes` ou abrir o Painel de Controle e selecionar o icone `Fontes`. 
 
-## Requisitos Minímos
+⚠️ **O Terminal do VSCode só possui suporte com fontes mono**
+## Requisitos Mínimos
 Para executar o WSL2 (Windows Subsystem for Linux 2) em um sistema operacional Windows 10, você precisa cumprir os seguintes requisitos mínimos de sistema:
 
 - Windows 10, versão 1903 ou superior - Certifique-se de que seu sistema operacional Windows 10 esteja atualizado para a versão 1903 ou superior. Para verificar a versão do seu Windows, pressione a tecla Windows + R, digite "winver" e pressione Enter.
