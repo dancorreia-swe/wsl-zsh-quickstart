@@ -14,7 +14,7 @@ Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plug
 - [O que é Oh My Zsh?](#o-que-é-oh-my-zsh)
 - [Instalando Oh My Zsh](#instalando-ohmyzsh)
 - [PowerLevel10k](#powerlevel10k)
-- [Plugins e Adicionais](#plugins--adicionais)
+- [ZSH Plugins](#zsh-plugins)
 
 ## Recomendações Iniciais
 
@@ -172,7 +172,7 @@ p10k configure
 
 ![terminal-show-config](/assets/terminal10k.gif)
 
-## Plugins & Adicionais
+## ZSH Plugins
 Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, podemos colocar a valer as ferramentas a nossa disposição. Aqui vou somente mostrar comn instalar dois plugins que são em minha opnião indispensáveis, mas vale falar que as opções de customização são praticamente ilimitadas e que você pode adicionar quantos plugins desejar.
 <br><br>
 > ### zsh-syntax-highlighting & zsh-autosuggestions
@@ -193,6 +193,20 @@ Depois de instalados, vá para `nano ~/.zshrc` e ache `plugins=(git)` e adicione
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
 - Reabra o terminal e pronto. 🥳
+
+## Adicionais
+Já que você está dentro de um ambiente Linux, recomendamos que você instale algumas ferramentas que vão ser úteis de maneira geral, tanto para a área de desenvolvimento, como a utilização do terminal em si.
+
+1. **neofetch**
+2. **tree**
+3. **nvm**
+4. **npm**   
+5. **npx**   
+6. **nnn**
+7. **pip**
+8. **bat**
+9. **fd**   
+10. **zoxide**   
 
 ## Visual Studio Code
 ## Referências
