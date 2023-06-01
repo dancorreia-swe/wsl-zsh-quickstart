@@ -214,8 +214,6 @@ Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, podemos colo
 <br><br>
 
 > ### zsh-syntax-highlighting & zsh-autosuggestions
->
-> <br>
 
 Execute os dois comandos abaixo para instalar o zsh-autosuggestions e o zsh-syntax-highlighting, respectivamente.
 
@@ -233,7 +231,7 @@ Depois de instalados, vá para `nano ~/.zshrc` e ache `plugins=(git)` e adicione
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
-- Reabra o terminal e pronto. 🥳
+- Reabra o terminal ou digite `source .zshrc` e pronto. 🥳
 
 ## Adicionais
 
