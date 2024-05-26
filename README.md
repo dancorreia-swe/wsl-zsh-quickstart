@@ -6,18 +6,18 @@ Guia e tutorial para a utilização do Linux dentro do ambiente Windows com plug
 ## Sumário
 
 - [Recomendações Iniciais](#recomendações-iniciais)
-- [O que é WSL?](#o-que-é-wsl)
-- [Por que usar WSL 2 para desenvolvimento?](#por-que-usar-wsl-2-para-desenvolvimento)
+  - [O que é WSL?](#o-que-é-wsl)
+  - [Por que usar WSL 2 para desenvolvimento?](#por-que-usar-wsl-2-para-desenvolvimento)
 - [Instalação do WSL 2](#instalação-do-wsl-2)
-- [O que é Z Shell?](#o-que-é-z-shell)
+  - [O que é Z Shell?](#o-que-é-z-shell)
 - [Instalando ZSH](#instalando-zsh)
-- [O que é Oh My Zsh?](#o-que-é-oh-my-zsh)
+  - [O que é Oh My Zsh?](#o-que-é-oh-my-zsh)
 - [Instalando Oh My Zsh](#instalando-ohmyzsh)
 - [PowerLevel10k](#powerlevel10k)
 - [ZSH Plugins](#zsh-plugins)
 - [Adicionais](#adicionais)
 - [Visual Studio Code](#visual-studio-code)
-- [Configurando fontes no Terminal/VSCode](#configurando-fontes-no-terminal-windows)
+  - [Configurando fontes no Terminal/VSCode](#configurando-fontes-no-terminal-windows)
 
 ## Recomendações Iniciais
 
@@ -63,7 +63,7 @@ Este comando irá instalar todas as dependências do WSL instalando o Ubuntu com
 
 Se você quiser instalar uma distribuição diferente, execute o comando `wsl -l -o` , será listado todas as versões de Linux disponíveis. Instale a versão escolhida com o comando `wsl --install -d nome-da-distribuicao`.
 
-Recomendamos manter-se com Ubuntu por ser uma distribuição popular e que já vem com diversas ferramentas pré-instaladas.
+Por recomendação, por hora mantenha o Ubuntu por ser uma distribuição popular e que já vem com diversas ferramentas pré-instaladas.
 
 > ## Windows 10
 >
@@ -117,41 +117,41 @@ O Z Shell pode ser instalado em muitas distribuições Linux e macOS por meio de
 
 ## Instalando ZSH
 
-Para instalar o Z Shell abra o app Terminal do Windows para acessar o seu WSL <br><br>
+Para instalar o Z Shell abra o app Terminal do Windows para acessar o WSL <br><br>
 ![windows-terminal-search](./assets/terminal-neo.gif)
 
-No terminal, em ambiente Linux, atualize os seus pacotes e dê upgrade nos programas do seu sistema utilizando os comandos abaixo:
+No terminal, em ambiente Linux, atualize os seus pacotes e dê upgrade nos programas do sistema utilizando os comandos abaixo:
 
 ```bash
 sudo apt update && sudo apt upgrade
 ```
 
 **Ubuntu, Debian & derivatives (Windows 10 WSL | Native Linux kernel with Windows 10 build 1903)** <br>
-Para instalar o zshell utilize:
+Para instalar o zshell execute:
 
 ```bash
 sudo apt install zsh
 ```
 
-Para checar se o zsh foi devidamente instalado, reinicie seu terminal e digite, `zsh --version` , o comando deve retornar algo similar à: `zsh 5.8.1`
+Para checar se o zsh foi devidamente instalado, digite, `zsh --version` , o comando deve retornar algo similar à: `zsh 5.8.1`, caso nada apareça, tente reiniciar o terminal
 
 ## O que é Oh My Zsh?
 
-Oh My Zsh é um framework de código aberto para gerenciar sua configuração do Z Shell (zsh). Ele fornece uma maneira fácil de instalar e gerenciar temas, plugins e outras configurações do Z Shell. Com o Oh My Zsh, você pode personalizar facilmente a aparência e o comportamento do seu shell, adicionar novas funcionalidades e tornar sua experiência de linha de comando mais produtiva e agradável.
+Oh My Zsh é um framework de código aberto para gerenciar sua configuração do Z Shell (zsh). Ele fornece uma maneira fácil de instalar e gerenciar temas, plugins e outras configurações do Z Shell. Com o Oh My Zsh, a capacidade de personalizar facilmente a aparência e o comportamento do shell, adicionar novas funcionalidades e tornar a experiência de linha de comando mais produtiva e agradável.
 
-O Oh My Zsh vem com vários recursos úteis pré-instalados, como autocompletar, sugestões de comandos, substituição de nomes de arquivos com wildcards, temas de aparência atraente e muito mais. Além disso, existem centenas de plugins disponíveis para o Oh My Zsh, que podem ser facilmente adicionados e configurados para atender às suas necessidades.
+O Oh My Zsh vem com vários recursos úteis pré-instalados, como autocompletar, sugestões de comandos, substituição de nomes de arquivos com wildcards, temas de aparência atraente e muito mais. Além disso, existem centenas de plugins disponíveis para o Oh My Zsh, que podem ser facilmente adicionados e configurados para atender quaisquer necessidades a frente.
 
-Vamos utilizar o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deixar nosso terminal charmoso e intuitivo, mostrando diretorios e status do Git utilizando ícones e horários diretamente nas linhas de escrita do prompt.
+A instalação vai ser feita utilizando o Oh My Zsh para instalar o PowerLevel10k, um plugin que vai deixar o terminal charmoso e intuitivo, mostrando diretorios e status do Git utilizando ícones e horários diretamente nas linhas de escrita do prompt.
 
 ## Oh My Zsh
 
 > ### Pré-requisitos:
 
-- Ter Git instalado (Por padrão o **WSL - Ubuntu** já vem com o Git instalado, mas caso queira se certificar digite `git --version` no seu terminal).
+- Ter Git instalado (Por padrão o **WSL - Ubuntu** já vem com o Git instalado, mas caso queira se certificar digite `git --version` no terminal).
 
 - Ter `curl` ou `wget` instalados (Neste guia iremos utilizar curl).
 
-⚠️ **_Caso o Git não esteja instalado no seu WSL, utilize:_**
+⚠️ **_Caso o Git não esteja instalado no WSL, utilize:_**
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -160,7 +160,7 @@ sudo apt install git
 
 ## CURL
 
-Vamos utilizar o curl, uma ferramenta de linha de comando que permite realizar transferência de dados de e para servidores por meio de vários protocolos de rede, incluindo HTTP, HTTPS, FTP, SMTP, POP3 e muitos outros, para baixar e instalar o Oh My ZSH.
+Este guide irá utilizar o `curl`, uma ferramenta de linha de comando que permite realizar transferência de dados de e para servidores por meio de vários protocolos de rede, incluindo HTTP, HTTPS, FTP, SMTP, POP3 e muitos outros, para baixar e instalar o Oh My ZSH.
 <br><br>
 Para instalar o curl basta somente fazer os mesmos passos feitos utilizados para a instalação do zsh:
 
@@ -172,7 +172,7 @@ Para checar se foi devidamente instalado execute o comando: `curl --version`
 
 ## Instalando OhMyZsh
 
-Para instalar Oh My Zsh basta digitar este comando no terminal e reinciar a janela do WSL.
+Para instalar Oh My Zsh basta digitar este comando no terminal e reinciar a janela do WSL ou abrir uma nova
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -187,11 +187,11 @@ Antes de prosseguir com a instalação é **ideal**:
 
 ### O que o PowerLevel10k faz?
 
-É um tema para o ZSH, que enfatiza velocidade, flexibilidade e uma experiência fora da caixa, voltada principalmente para a customização do seu terminal.
+É um tema para o ZSH, que enfatiza velocidade, flexibilidade e uma experiência fora da caixa, voltada principalmente para a customização do terminal.
 
 ## Instalando o PowerLevel10k
 
-A maneira mais simples de instalar é utilizando o git, desta forma bastar executar o código no terminal e reiniciar a janela para entrar no modo de configuração.
+A maneira mais simples de instalar é utilizando o git, bastar executar o código no terminal e reiniciar a janela para entrar no modo de configuração.
 
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
@@ -200,7 +200,7 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 ## Wizard e Customização
 
-Após reiniciar a janela, um wizard deve aparecer no seu terminal para selecionar opções de customização estéticas, a partir daqui vai de seu bom gosto e preferência, caso queira repetir o processo de setup utilize:
+Após reiniciar a janela, um wizard deve aparecer no terminal para selecionar opções de customização estéticas, a partir daqui vai de bom gosto e preferência, caso queira repetir o processo de setup utilize:
 
 ```bash
 p10k configure
@@ -210,7 +210,7 @@ p10k configure
 
 ## ZSH Plugins
 
-Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, podemos colocar a valer as ferramentas a nossa disposição. Aqui vou somente mostrar como instalar dois plugins que são em minha opnião indispensáveis, mas vale ressaltar que as opções de customização são praticamente ilimitadas e que você pode adicionar quantos plugins desejar.
+Agora que seu combo setup está pronto, WSL2 + zsh + powerlevel10k, pode-se colocar a valer as ferramentas a disposição. Este guide somente mostrar como instalar dois plugins que são em minha opnião indispensáveis, mas vale ressaltar que as opções de customização são praticamente ilimitadas e que você pode adicionar quantos plugins desejar.
 <br><br>
 
 > ### zsh-syntax-highlighting & zsh-autosuggestions
@@ -235,7 +235,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 ## Adicionais
 
-Já que você está dentro de um ambiente Linux, recomendamos que você instale algumas ferramentas que vão ser úteis de maneira geral, tanto para a área de desenvolvimento, como a utilização do terminal em si.
+Já que você está dentro de um ambiente Linux, aqui vai mais algumas ferramentas que vão ser úteis de maneira geral, tanto para a área de desenvolvimento, como a utilização do terminal em si.
 
 1. **neofetch**
 2. **tree**
@@ -267,7 +267,7 @@ Após ter instalado o VSCode e a extensão WSL, dentro do terminal basta executa
 code nome-do-arquivo
 ```
 
-O Ubuntu irá abrir o diretório/arquivo no VSCode em ambiente Linux. Caso tudo corra de maneira correta, no canto inferior esquerdo você verá uma tag em azul com o nome similar à: `WSL: Ubuntu` e o seu terminal integrado no VSCode funcional em Linux.
+O Ubuntu irá abrir o diretório/arquivo no VSCode em ambiente Linux. Caso tudo corra de maneira correta, no canto inferior esquerdo você verá uma tag em azul com o nome similar à: `WSL: Ubuntu` e o terminal integrado do VSCode funcional dentro da instância do WSL.
 
 ![wsl-working](/assets/wsl-terminal.png)
 
@@ -283,11 +283,11 @@ A configuração dentro do terminal Windows é feita a partir dos perfis, desta 
 
 ## Configurando fonte no VSCode
 
-Se seu terminal e WSL estão funcionando mas você não está conseguindo visualizar os ícones dentro do terminal integrado do VSCode, basta somente uma simples configuração nas configurações de usuário para solucionar isso.
+Se o terminal e WSL estão funcionando mas você não está conseguindo visualizar os ícones dentro do terminal integrado do VSCode, basta somente uma simples configuração nas configurações de usuário para solucionar isso.
 
 Dentro do VSCode, abra a palheta de comando, `ctrl + shift + p` , e procure por `Preferences: Open User Settings (JSON)` ou `Preferências: Abrir as Configurações do Usuário (JSON)` caso use o VSCode em português.
 
-Nas linhas do editor você verá uma estrutura de `JSON`, basta adicionar uma nova linha e digitar:
+Nas linhas do editor verá uma estrutura de `JSON`, basta adicionar uma nova linha e digitar:
 
 ```bash
   "terminal.integrated.fontFamily": "nome-da-fonte",
@@ -301,9 +301,9 @@ Nas linhas do editor você verá uma estrutura de `JSON`, basta adicionar uma no
 
 ## Requisitos Mínimos
 
-Para executar o WSL2 (Windows Subsystem for Linux 2) em um sistema operacional Windows 10, você precisa cumprir os seguintes requisitos mínimos de sistema:
+Para executar o WSL2 (Windows Subsystem for Linux 2) em um sistema operacional Windows 10, é preciso cumprir os seguintes requisitos mínimos de sistema:
 
-- Windows 10, versão 1903 ou superior - Certifique-se de que seu sistema operacional Windows 10 esteja atualizado para a versão 1903 ou superior. Para verificar a versão do seu Windows, pressione a tecla Windows + R, digite "winver" e pressione Enter.
+- Windows 10, versão 1903 ou superior - Certifique-se de que seu sistema operacional Windows 10 esteja atualizado para a versão 1903 ou superior. Para verificar a versão do Windows, pressione a tecla Windows + R, digite "winver" e pressione Enter.
 
 - Processador de 64 bits com suporte para virtualização - O WSL2 requer um processador de 64 bits com suporte para virtualização de hardware. Verifique se a virtualização está habilitada no BIOS do seu computador.
 
